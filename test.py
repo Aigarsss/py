@@ -231,26 +231,174 @@
 
 ############### 22 ################
 #Write a Python program to count the number 4 in a given list.
+# array = [4, 1, 2, 4]
+# counter = 0
+# for i in array:
+#     if i == 4:
+#         counter += 1
+# print(counter)
 
 ############### 23 ################
+# Write a Python program to get the n (non-negative integer) 
+# copies of the first 2 characters of a given string. 
+# Return the n copies of the whole string if the length is less than 2.
 
+# def char_copy(str, n):
+#     if len(str) < 2:
+#         return str*n
+#     else:
+#         return str[0:2]*n
+
+# print(char_copy("abcd", 4))
 
 ############### 24 ################
+#Write a Python program to test whether a passed letter is a vowel or not. 
+# vowels = ["a", "e", "i", "o", "u"]
+# letter = input("Enter a letter: ")
+# #letter = "a"
+# if str.lower(letter) in vowels:
+#     print("This is a vowel")
+# else:
+#     print("This is not vowel")
 
+# #solution
+# def is_vowel(char):
+#     all_vowels = 'aeiou'
+#     return char in all_vowels
+# print(is_vowel('c'))
+# print(is_vowel('e'))
 
 ############### 25 ################
+# Write a Python program to check whether a specified value is 
+# contained in a group of values. 
+# Test Data : 
+# 3 -> [1, 5, 8, 3] : True
+# -1 -> [1, 5, 8, 3] : False
 
+# def check_group(list, value):
+#     if value in list:
+#         return True
+#     return False
+
+# print(check_group([1, 5, 8, 3], 3))
 
 ############### 26 ################
+#Write a Python program to create a histogram from a given list of integers.
 
+# def histogram(range, char):
+#     result = ""
+#     for i in range:
+#         result += i*char + "\n"
+#     return result
+
+# print(histogram([1, 2, 3], "@"))
 
 ############### 27 ################
+# Write a Python program to concatenate all elements in a 
+# list into a string and return it.
+# def concat(list):
+#     result = ""
+#     for i in list:
+#        result += str(i)
+#     return result
 
+# print(concat([1, "312", "ad"]))
 
 ############### 28 ################
+# Write a Python program to print all even numbers from a 
+# given numbers list in the same order and stop the printing 
+# if any numbers that come after 237 in the sequence. 
+# Sample numbers list :
 
+# numbers = [    
+#     386, 462, 47, 418, 907, 344, 236, 375, 823, 566, 597, 978, 328, 615, 953, 345, 
+#     399, 162, 758, 219, 918, 237, 412, 566, 826, 248, 866, 950, 626, 949, 687, 217, 
+#     815, 67, 104, 58, 512, 24, 892, 894, 767, 553, 81, 379, 843, 831, 445, 742, 717, 
+#     958,743, 527
+#     ]
+
+# for i in numbers:
+#     if i == 237:
+#         print(i)
+#         break
+#     else:
+#         if i % 2 == 0:
+#             print(i)
 
 ############### 29 ################
+# Write a Python program to print out a set containing all the colors 
+# from color_list_1 which are not present in color_list_2. 
+# Test Data : 
+# color_list_1 = set(["White", "Black", "Red"]) 
+# color_list_2 = set(["Red", "Green"])
+# # Expected Output : 
+# # {'Black', 'White'}
+# new_set = set() 
+# for i in color_list_1:
+#     if i not in color_list_2:
+#         new_set.add(i)
+# print(new_set)
 
+##solution
+# color_list_1 = set(["White", "Black", "Red"])
+# color_list_2 = set(["Red", "Green"])
+
+# print(color_list_1.difference(color_list_2))
 
 ############### 30 ################
+# Write a Python program that will accept the base and height of a 
+# triangle and compute the area.
+
+# def area(base,height):
+#     return base * height / 2
+
+# print(round(area(4.2, 5),2))
+
+############### 31 ################
+# Write a Python program to compute the greatest common divisor (GCD) 
+# of two positive integers.
+
+# def greatest_devisor(a, b):
+#     greatest = 0
+#     smallest = min(a, b)
+#     count = 1
+#     while count < smallest:
+#         if a % count == 0 and b % count == 0:
+#             greatest = count
+#         count += 1
+#     return greatest
+
+# print(greatest_devisor(21, 15))
+
+############### 32 ################
+# Write a Python program to get the least common multiple (LCM) 
+# of two positive integers. 
+
+def smallest_multiple(a, b):
+    return a, b
+
+
+print(smallest_multiple(12, 6))
+
+############### 33 ################
+
+
+############### 34 ################
+
+
+############### 35 ################
+
+
+############### 36 ################
+
+
+############### 37 ################
+
+
+############### 38 ################
+
+
+############### 39 ################
+
+
+############### 40 ################
