@@ -538,30 +538,111 @@
 # print(distance)
 
 ############### 41 ################
-
+#Write a Python program to check whether a file exists
+#solution
+# import os.path
+# path = "./test.py"
+# print(os.path.exists(path))
 
 ############### 42 ################
-
+# Write a Python program to determine if a Python shell 
+# is executing in 32bit or 64bit mode on OS.
+#solution
+#solution
+# For 32 bit it will return 32 and for 64 bit it will return 64
+# import struct
+# print(struct.calcsize("P") * 8)
 
 ############### 43 ################
-
+#Write a Python program to get OS name, platform and release information. 
+#solution
+# import platform
+# import os
+# print(os.name)
+# print(platform.system())
+# print(platform.release())
 
 ############### 44 ################
-
+# Write a Python program to locate Python site-packages.
+#solution
+# import site
+# print(site.getsitepackages())
 
 ############### 45 ################
-
+#Write a python program to call an external command in Python
+#solution
+# from subprocess import call
+# call(["ls", "-l"])
 
 ############### 46 ################
-
+# Write a python program to get the path 
+# and name of the file that is currently executing
+#solution
+# import os
+# print("Current File Name : " + os.path.realpath(__file__))
 
 ############### 47 ################
-
+# Write a Python program to find out the number of CPUs using.
+# import multiprocessing
+# print(multiprocessing.cpu_count())
 
 ############### 48 ################
+#Write a Python program to parse a string to Float or Integer.
 
+# def parser(a):
+#     a = float(a)
+#     return a
+
+# print(parser("5"))
+# print(int(parser("5")))
 
 ############### 49 ################
+#Write a Python program to list all files in a directory in Python. 
+# import os
+# path = "./"
+# print(os.listdir(path))
 
+#solution
+from os import listdir
+from os.path import isfile, join
+path = "./"
+files_list = [f for f in listdir(path) if isfile(join(path, f))]
+print(files_list)
 
 ############### 50 ################
+
+
+############### 51 ################
+
+
+############### 52 ################
+
+
+############### 53 ################
+
+
+############### 54 ################
+
+
+############### 55 ################
+
+
+############### 5 ################
+
+
+############### 57 ################
+
+
+############### 58 ################
+
+
+############### 59 ################
+
+
+############### 60 ################
+
+
+############### 61 ################
+
+
+############### 62 ################
