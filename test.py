@@ -374,31 +374,194 @@
 # Write a Python program to get the least common multiple (LCM) 
 # of two positive integers. 
 
-def smallest_multiple(a, b):
-    return a, b
+# def smallest_multiple(a, b):
+# # get a, get b
+# # get ultiple number between the two
+# # get a number that can be devied by a and b in the range of the multiple
+#     total = a*b
+#     count = 1
+#     while count <= total:
+#         if count % a == 0 and count % b == 0:
+#             return count
+#         count += 1
 
 
-print(smallest_multiple(12, 6))
+# print(smallest_multiple(4, 6)) #12
+# print(smallest_multiple(15, 17)) #255
 
 ############### 33 ################
+# Write a Python program to sum of three given integers. 
+# However, if two values are equal sum will be zero
+
+#get the three integers
+#assign sum value
+#check if a == b or a == c or b == c
+
+# def sum_three(a, b, c):
+#     total = 0
+#     if a == b or a == c or b == c:
+#         return total
+#     else:
+#         total = a +  b + c
+#         return total
 
 
+# print(sum_three(1,1,2))
+# print(sum_three(5,1,2))
 ############### 34 ################
+# Write a Python program to sum of two given integers. However, 
+# if the sum is between 15 to 20 it will return 20.
 
+# get the integers (input or function)
+# if 15 <= sum <= 20 return 0
+# else sum
+
+# def sum_20(a, b):
+#     total = a + b
+#     if 15 <= total <= 20:
+#         return 20
+#     else:
+#         return total
+
+# print(sum_20(17,2))
+# print(sum_20(4,2))
 
 ############### 35 ################
+# Write a Python program that will return true if the two given integer 
+# values are equal or their sum or difference is 5.
+# def two(a, b):
+#     if a == b or a + b == 5 or abs(a-b) == 5:
+#         return True
+#     return False
 
+# print(two(2,2))
+# print(two(5,10))
+# print(two(2,99))
 
 ############### 36 ################
+# Write a Python program to add two objects 
+# if both objects are an integer type.
 
+# def add_int(a, b):
+#     if type(a) == type(b) == int:
+#         return a + b
+#     else:
+#         return "one of the inpts is not an int"
+
+# print(add_int(1, 5))
+# print(add_int("tab", 5))
+
+#solution
+# def add_numbers(a, b):
+#     if not (isinstance(a, int) and isinstance(b, int)):
+#          raise TypeError("Inputs must be integers")
+#     return a + b
+
+# print(add_numbers(10, 20))
 
 ############### 37 ################
+# Write a Python program to display your details like name, age, 
+# address in three different lines. 
 
+# def details():
+#     name = input("Your name: ")
+#     age = input("Your age: ")
+#     address = input("Your address: ")
+#     print("###################" + "\n" + "Your name is " + name + "\n" + "Your age is " + age + "\n" + "Yor address is " + address)
+
+# details()
+
+#solution
+# def personal_details():
+#     name, age = "Simon", 19
+#     address = "Bangalore, Karnataka, India"
+#     print("Name: {}\nAge: {}\nAddress: {}".format(name, age, address))
+
+# personal_details()
 
 ############### 38 ################
+# # Write a Python program to solve (x + y) * (x + y). 
+# # Test Data : x = 4, y = 3
+# # Expected Output : (4 + 3) ^ 2) = 49
+# x = 4
+# y = 3
+# result = (x + y) * (x + y)
 
+# print("({} + {}) ^ 2 = {}".format(x,y,result))
 
 ############### 39 ################
+# Write a Python program to compute the future value of a specified 
+# principal amount, rate of interest, and a number of years. 
+# Test Data : amt = 10000, int = 3.5, years = 7
+# Expected Output : 12722.79
 
+# def future_value():
+#     amt = 10000
+#     intr = 0.035
+#     y = 7
+#     count = 1
+#     while count <= y:
+#         interest = amt*intr
+#         #print("interest amount below")
+#         #print(interest)
+#         amt += interest
+#         #print("amount below")
+#         #print(amt)
+#         count += 1
+#     return round(amt, 2)
+
+# print(future_value())
+
+#solution
+# amt = 10000
+# int = 3.5
+# years = 7
+
+# future_value  = amt*((1+(0.01*int)) ** years)
+# print(round(future_value,2))
 
 ############### 40 ################
+# Write a Python program to compute the distance between 
+# the points (x1, y1) and (x2, y2).
+# from math import sqrt
+# x1, x2, y1, y2 = 1, 2, 3, 4
+
+# print(sqrt((x2-x2)**2 + (y2-y1)**2))
+
+# #solution
+# import math
+
+# p1 = [4, 0]
+# p2 = [6, 6]
+# distance = math.sqrt( ((p1[0]-p2[0])**2)+((p1[1]-p2[1])**2) )
+
+# print(distance)
+
+############### 41 ################
+
+
+############### 42 ################
+
+
+############### 43 ################
+
+
+############### 44 ################
+
+
+############### 45 ################
+
+
+############### 46 ################
+
+
+############### 47 ################
+
+
+############### 48 ################
+
+
+############### 49 ################
+
+
+############### 50 ################
