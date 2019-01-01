@@ -603,43 +603,112 @@
 # print(os.listdir(path))
 
 #solution
-from os import listdir
-from os.path import isfile, join
-path = "./"
-files_list = [f for f in listdir(path) if isfile(join(path, f))]
-print(files_list)
+# from os import listdir
+# from os.path import isfile, join
+# path = "./"
+# files_list = [f for f in listdir(path) if isfile(join(path, f))] #didnt get te join bit
+# print(files_list)
 
 ############### 50 ################
+#Write a Python program to print without newline or space.
 
+# for i in range(0,10):
+#     print(i, end = "")
+# print(end = "\n")
 
 ############### 51 ################
+# Write a Python program to determine profiling of Python programs. 
+# Note: A profile is a set of statistics that describes how 
+# often and for how long various parts of the program executed. 
+# These statistics can be formatted into reports via the pstats 
+# module. 
 
+# import cProfile
+# def sum():
+#     print(1+2)
+# cProfile.run('sum()')
 
 ############### 52 ################
+# Write a Python program to print to stderr.
+
+# ?????????????????????
 
 
 ############### 53 ################
 
+# import os
+
+# print(os.environ['HOME'])
+# print(os.environ['PATH'].split(";"))
+
+# for i in os.environ['PATH'].split(";"):
+#     print(i)
+
 
 ############### 54 ################
+#Write a Python program to get the current username
+
+# import getpass
+# print(getpass.getuser())
 
 
 ############### 55 ################
+#Write a Python to find local IP addresses using Python's stdlib
+
+# ????????????????????? something with socket import
 
 
-############### 5 ################
+############### 56 ################
 
+# Write a Python program to get height and width of the console window.
+
+# ?????????????????????
 
 ############### 57 ################
+# import time
+# start = time.time()
+# end = time.time()
+# took = end - start
 
+# def time_function(n):
+#     start
+#     s = 0
+#     for i in range(1,n+1):
+#         s += i
+#     end
+#     return s, took
+
+# print(time_function(9))
 
 ############### 58 ################
+# Write a python program to sum of the first n positive integers.
 
+# def int_sum():
+#     n = input("Enter an integer: ")
+#     result = 0
+#     for i in range(1,int(n)+1):
+#         result += i
+#     return result
+
+# print(int_sum())
 
 ############### 59 ################
+# Write a Python program to convert height 
+# (in feet and inches) to centimeters
 
+# def converter(ft, inch):
+#     # ft to cm
+#     cm_in_foot = 30.48
+#     cm_in_inch = 2.54
+#     cm = ft * cm_in_foot + inch * cm_in_inch
+#     return "{} feet is {}cm ".format(ft, cm)
+
+# print(converter(5, 3))
 
 ############### 60 ################
+# Write a Python program to calculate the hypotenuse of a right 
+# angled triangle.
+
 
 
 ############### 61 ################
