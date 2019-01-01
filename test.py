@@ -709,9 +709,68 @@
 # Write a Python program to calculate the hypotenuse of a right 
 # angled triangle.
 
+# from math import sqrt
 
+# def hip(a, b):
+#     return sqrt(a**2 + b**2)
+
+# print(round(hip(2,5), 2))
 
 ############### 61 ################
+#Write a Python program to convert the distance (in feet) 
+# to inches, yards, and miles
 
+# def converter_dist(feet):
+#     inch = 12*feet
+#     yards = round(feet/3,2)
+#     miles = round(feet/5280, 2)
+
+#     return "{} feet is the same as {} inches or {} yards or {} miles".format(feet, inch, yards, miles)
+
+# print(converter_dist(100))
 
 ############### 62 ################
+#Write a Python program to convert all units of time into seconds. 
+
+#units days, hours, minutes, seconds
+
+# days, hours, minutes, seconds = 4, 5, 20, 10
+
+# d = days * 3600 * 24
+# h = hours * 3600
+# m = minutes * 60
+# s = seconds
+
+# print(d + h + m + s)
+
+############### 63 ################
+#Write a Python program to get an absolute file path.
+# from os import path
+
+# print(path.abspath("test.py"))
+
+############### 64 ################
+#  Write a Python program to get file creation 
+#  and modification date/times.
+
+############### 65 ################
+#solution
+# import os.path, time
+# print("Last modified: %s" % time.ctime(os.path.getmtime("test.py")))
+# print("Created: %s" % time.ctime(os.path.getctime("test.py")))
+
+############### 66 ################
+#  Write a Python program to convert seconds to day, 
+#  hour, minutes and seconds.
+
+
+############### 67 ################
+
+
+############### 68 ################
+
+
+############### 69 ################
+
+
+############### 70 ################
