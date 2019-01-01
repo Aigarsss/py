@@ -762,15 +762,90 @@
 ############### 66 ################
 #  Write a Python program to convert seconds to day, 
 #  hour, minutes and seconds.
+# sec = 1234565
 
+# days = sec // (3600 * 24)
+# time = sec % (3600 * 24)
+# hours = time // 3600
+# time = time % 3600
+# minutes = time // 60
+# time = time % 60
+# secs = time
+
+# print("{} seconds is {} days, {} hours, {} minutes, {} seconds".format(sec, days, hours, minutes, secs))
+
+# #solution:
+# time = float(input("Input time in seconds: "))
+# day = time // (24 * 3600)
+# time = time % (24 * 3600)
+# hour = time // 3600
+# time %= 3600
+# minutes = time // 60
+# time %= 60
+# seconds = time
+# print("d:h:m:s-> %d:%d:%d:%d" % (day, hour, minutes, seconds))
 
 ############### 67 ################
+#Write a Python program to calculate body mass index.
+# def bmi(w, h):
+#     return round(w/h**2, 2)
 
+# print(bmi(75, 1.8))
 
 ############### 68 ################
+# Write a Python program to convert pressure in kilopascals to 
+# pounds per square inch, a millimeter of mercury (mmHg) 
+# and atmosphere pressure
 
+# to convert from PSI = KPA * 0.14503773773020923
+# kpa = 12.35
+# const = 0.14503773773020923
+# converted = kpa * const
+# print(round(converted, 2))
 
 ############### 69 ################
+#Write a Python program to sort three integers without using 
+#conditional statements and loops. 
+def sort(a, b, c):
+    li = [a, b, c]
+    return li
+
+
+print(sort(1,3,2))
+print(sort(1,2,3))
 
 
 ############### 70 ################
+
+
+############### 71 ################
+
+
+############### 72 ################
+
+
+############### 73 ################
+
+
+############### 74 ################
+
+
+############### 75 ################
+
+
+############### 76 ################
+
+
+############### 77 ################
+
+
+############### 78 ################
+
+
+############### 79 ################
+
+
+############### 80 ################
+
+
+############### 81 ################
