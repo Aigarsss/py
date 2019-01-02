@@ -806,46 +806,410 @@
 ############### 69 ################
 #Write a Python program to sort three integers without using 
 #conditional statements and loops. 
-def sort(a, b, c):
-    li = [a, b, c]
-    return li
+# def sort(a, b, c):
+#     li = []
+#     if a < b and a < c:
+#         li.append(a)
+#         if b < c:
+#             li.append(b)
+#             li.append(c)
+#         else:
+#             li.append(c)
+#             li.append(b)
+#         return li
+#     elif b < a and b < c:
+#         li.append(b)
+#         if a < c:
+#             li.append(a)
+#             li.append(c)
+#         else:
+#             li.append(c)
+#             li.append(a)
+#         return li
+#     elif c < a and c < b:
+#         li.append(c)
+#         if a < b:
+#             li.append(a)
+#             li.append(b)
+#         else:
+#             li.append(b)
+#             li.append(a)
+#         return li
 
 
-print(sort(1,3,2))
-print(sort(1,2,3))
+# print(sort(1,2,4))
+# print(sort(1,3,2))
+# print(sort(5,2,1))
 
+# #solution:
+# x = int(input("Input first number: "))
+# y = int(input("Input second number: "))
+# z = int(input("Input third number: "))
+
+# a1 = min(x, y, z)
+# a3 = max(x, y, z)
+# a2 = (x + y + z) - a1 - a3
+# print("Numbers in sorted order: ", a1, a2, a3)
 
 ############### 70 ################
+#Write a Python program to sort files by date.
 
+# import glob
+# import os
+
+# files = glob.glob("*.py")
+# print(files)
+# files.sort(key=os.path.getmtime)
+# print("\n".join(files))
 
 ############### 71 ################
+#Write a Python program to get a directory listing, sorted by creation date.
 
+#???????????????
 
 ############### 72 ################
 
+#Write a Python program to get the details of math module.
+# import math
+# print(help(math))
+
+# #solution
+# # Imports the math module
+# import math            
+# #Sets everything to a list of math module
+# math_ls = dir(math) # 
+# print(math_ls)
 
 ############### 73 ################
+#Write a Python program to calculate midpoints of a line
+#solution
+# print('\nCalculate the midpoint of a line :')
 
+# x1 = float(input('The value of x (the first endpoint) '))
+# y1 = float(input('The value of y (the first endpoint) '))
+
+# x2 = float(input('The value of x (the first endpoint) '))
+# y2 = float(input('The value of y (the first endpoint) '))
+
+# x_m_point = (x1 + x2)/2
+# y_m_point = (y1 + y2)/2
+# print();
+# print("The midpoint of line is :")
+# print( "The midpoint's x value is: ",x_m_point)
+# print( "The midpoint's y value is: ",y_m_point)
+# print();
 
 ############### 74 ################
+#Write a Python program to hash a word.
 
+# import hashlib
+# #print(hashlib.algorithms_available)
+# #print(hashlib.algorithms_guaranteed)
+# hash_object = hashlib.sha256(b'Hello World')
+# print(hash_object)
+# hex_dig = hash_object.hexdigest()
+# print(hex_dig)
+
+# It is important to note the "b" preceding the string literal, 
+# this converts the string to bytes, because the hashing function only 
+# takes a sequence of bytes as a parameter. In previous versions of the library, 
+# it used to take a string literal. So, if you need to take some input from the 
+# console, and hash this input, do not forget to encode the string in a 
+# sequence of bytes
+# https://www.pythoncentral.io/hashing-strings-with-python/
+
+# solution
+
+# soundex=[0,1,2,3,0,1,2,0,0,2,2,4,5,5,0,1,2,6,2,3,0,1,0,2,0,2]
+ 
+# word=input("Input the word be hashed: ")
+ 
+# word=word.upper()
+ 
+# coded=word[0]
+ 
+# for a in word[1:len(word)]:
+#     i=65-ord(a)
+#     coded=coded+str(soundex[i])
+# print() 
+# print("The coded word is: "+coded)
+# print()
 
 ############### 75 ################
+#Write a Python program to get the copyright information.
+# from sys import copyright
 
+# print(copyright)
 
 ############### 76 ################
+# Write a Python program to get the command-line arguments 
+# (name of the script, the number of arguments, arguments) passed to a script.
+
+# import sys
+# print("This is the name/path of the script:"),sys.argv[0]
+# print("Number of arguments:",len(sys.argv))
+# print("Argument List:",str(sys.argv))
 
 
 ############### 77 ################
-
+# Write a Python program to test whether the system is a big-endian 
+# platform or little-endian platform
+# import sys
+# print()
+# if sys.byteorder == "little":
+#     #intel, alpha
+#     print("Little-endian platform.")
+# else:
+#     #motorola, sparc
+#     print("Big-endian platform.")
+# print()
 
 ############### 78 ################
+#Write a Python program to find the available built-in modules.
+# import sys
+# mod = sys.modules
+# print(mod)
 
+# import sys
+# import textwrap
+# module_name = ', '.join(sorted(sys.builtin_module_names))
+# print(module_name)
 
 ############### 79 ################
+#Write a Python program to get the size of an object in bytes.
 
+# import sys
+# x = 100
+# print(sys.getsizeof(x))
 
 ############### 80 ################
-
+#Write a Python program to get the current value of the recursion limit.
+# import sys
+# print()
+# print("Current value of the recursion limit:")
+# print(sys.getrecursionlimit())
+# print()
 
 ############### 81 ################
+# colors = ["White", "Brown", "Green"]
+
+# print(", ".join(colors))
+
+############### 82 ################
+#Write a Python program to calculate the sum over a container.
+
+# x = [1, 2, 3]
+
+# print(sum(x))
+
+############### 83 ################
+# Write a Python program to test whether all numbers of a 
+# list is greater than a certain number. 
+# test = 6
+# li = [7, 8, 9]
+# if min(li) > test:
+#     print(True)
+# else:
+#     print(False)
+
+############### 84 ################
+# Write a Python program to count the number occurrence of a specific 
+# character in a string.
+
+# string = "something something"
+# char = "s"
+# counter = 0
+# for i in string:
+#     if i == char:
+#         counter += 1
+# print(counter)
+
+# # solution
+# s = "The quick brown fox jumps over the lazy dog."
+# print()
+# print(s.count("q"))
+# print()
+
+############### 85 ################
+# Write a Python program to check if a file path is a file or a directory.
+# import os
+# path = "./test.py"
+# if os.path.isdir(path):
+#     print("path")
+# else:
+#     print("file")
+
+############### 86 ################
+#Write a Python program to get the ASCII value of a character. 
+
+# char = "@"
+
+# print(ord(char))
+
+############### 87 ################
+# Write a Python program to get the size of a file.
+# import os
+
+# print(os.path.getsize("./test.py"))
+
+############### 88 ################
+# Given variables x=30 and y=20, write a Python program to print t "30+20=50".
+
+# x = 30
+# y = 20
+# total = x + y
+
+# print("{} + {} = {}".format(x,y,total))
+
+#solution:
+# x = 30
+# y = 20
+# print("\n%d+%d=%d" % (x, y, x+y))
+# print()
+
+############### 89 ################
+# Write a Python program to perform an action if a condition is true. 
+# Given a variable name, if the value is 1, display the string 
+# "First day of a Month!" and do nothing if the value is not equal.
+
+# x = 1
+# if x == 1:
+#     print("First day of a Month!")
+
+
+############### 90 ################
+# Write a Python program to create a copy of its own source code.
+# print()
+# print((lambda str='print(lambda str=%r: (str %% str))()': (str % str))())
+# print()
+
+############### 91 ################
+# Write a Python program to swap two variables.
+
+# variables = ["a", "b"]
+# variables = [variables[1], variables[0]]
+# print(variables)
+
+# solution
+# a = 30
+# b = 20
+# print("\nBefore swap a = %d and b = %d" %(a, b))
+# a, b = b, a
+# print("\nAfter swaping a = %d and b = %d" %(a, b))
+# print()
+
+############### 92 ################
+# Write a Python program to define a string containing special 
+# characters in various forms
+
+#solution
+# print()
+# print("\#{'}${\"}@/")
+# print("\#{'}${"'"'"}@/")
+# print(r"""\#{'}${"}@/""")
+# print('\#{\'}${"}@/')
+# print('\#{'"'"'}${"}@/')
+# print(r'''\#{'}${"}@/''')
+# print()
+
+############### 93 ################
+# Write a Python program to get the identity of an object. 
+
+# x = "identity"
+# print(id(x))
+
+############### 94 ################
+#Write a Python program to convert a byte string to a list of integers.
+
+# #solution
+# x = b'Abc'
+# print(x)
+# print()
+# print(list(x))
+# print()
+
+############### 95 ################
+# Write a Python program to check if a string is numeric. 
+# def is_int(a):
+#     try:
+#         a = float(a)
+#         if isinstance(a, float):
+#             return True
+#     except (ValueError, TypeError):
+#         return '\nNot numeric'
+
+# print(is_int("1"))
+
+############### 96 ################
+# Write a Python program to print the current call stack.
+
+#import tracebck
+
+############### 97 ################
+# Write a Python program to list the special variables used within the language.
+
+# #solution
+# s_var_names = sorted((set(globals().keys()) | set(__builtins__.__dict__.keys())) - set('_ names i'.split()))
+# print()
+# print( '\n'.join(' '.join(s_var_names[i:i+8]) for i in range(0, len(s_var_names), 8)) )
+# print()
+
+############### 98 ################
+# Write a Python program to get the system time.
+#solution
+# import time
+# print()
+# print(time.ctime())
+# print()
+
+############### 99 ################
+# Write a Python program to clear the screen or terminal.
+
+# #solution
+# import os
+# import time
+# # for windows
+# os.system('cls')
+# # os.system("ls")
+# # time.sleep(2)
+# # Ubuntu version 10.10
+# # os.system('clear')
+
+############### 100 ################
+# Write a Python program to get the name of the 
+# host on which the routine is running.
+# import socket
+# host_name = socket.gethostname()
+# print()
+# print("Host name:", host_name)
+# print()
+
+
+############### 101 ################
+
+
+############### 102 ################
+
+
+############### 103 ################
+
+
+############### 104 ################
+
+
+############### 105 ################
+
+
+############### 106 ################
+
+
+############### 107 ################
+
+
+############### 108 ################
+
+
+############### 109 ################
+
+
+############### 110 ################
