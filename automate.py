@@ -412,7 +412,7 @@
 
 ######### Chapter 7 – Pattern Matching with Regular Expressions
 
-import re
+# import re
 
 # phone_num_regex = re.compile(r"\d{3}-\d{3}-\d{4}") #regexes need to be raw
 # mo = phone_num_regex.search("this is the num 333-333-3333")
@@ -422,9 +422,63 @@ import re
 # mo = phone_num_regex.search("this is the num 333-333-3333")
 # print(mo.group(1))
 
-reg = re.compile(r"bat(man|woman|child)")
-mo = reg.search("batwoman")
-print(mo.group(1)) #finds woman
+# reg = re.compile(r"bat(man|woman|child)")
+# mo = reg.search("batwoman")
+# print(mo.group(1)) #finds woman
 
 
 #print(phone_num_regex)
+
+#########Project: Phone Number and Email Address Extractor
+
+# import pyperclip, re
+
+# phoneRegex = re.compile(r'''(
+#     (\d{3}|\(\d{3}\))?  #area code
+#     (\s|-|\.)?          #seperato
+#     (\d{3})             #first 3 digits
+#     (\s|-|\.)           #seperator
+#     (\d{4})             #last 4 digits
+#     (\s*(ext|x|ext.)\s*(\d{2,5}))?  #extension
+# )''', re.VERBOSE)
+
+# emailRegex = re.compile(r'''(
+#     [a-zA-Z0-9._%+-]+     #username
+#     @                     #@
+#     [a-zA-Z0-9.-]+        #Domain
+#     (\.[a-zA-Z]{2,4})          #
+# )''', re.VERBOSE)
+
+# #find matches in clipboard text
+# text = str(pyperclip.paste())
+# matches = []
+# for groups in phoneRegex.findall(text):
+#     phoneNum = '-'.join([groups[1], groups[3], groups[5]])
+#     if groups[8] != '':
+#         phoneNum += ' x' + groups[8]
+#     matches.append(phoneNum)
+# for groups in emailRegex.findall(text):
+#     matches.append(groups[0])
+
+# #Copy results to the clipboard.
+# if len(matches) > 0:
+#     pyperclip.copy('\n'.join(matches))
+#     print('Copied to clipboard')
+#     print(('\n').join(matches))
+# else:
+#     print('No phone numbers or eail addresses found.')
+
+# Strong Password Detection
+# Write a function that uses regular expressions to make sure the 
+# password string it is passed is strong. A strong password is 
+# defined as one that is at least eight characters long, contains 
+# both uppercase and lowercase characters, and has at least one digit. 
+# You may need to test the string against multiple regex patterns to 
+# validate its strength.
+
+# Regex Version of strip()
+# Write a function that takes a string and does the same thing as the 
+# strip() string method. If no other arguments are passed other than 
+# the string to strip, then whitespace characters will be removed from 
+# the beginning and end of the string. Otherwise, the characters specified 
+# in the second argument to the function will be removed from the string.

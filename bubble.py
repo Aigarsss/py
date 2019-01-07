@@ -83,19 +83,78 @@
 # print(new_range)
 
 ################ Kata 5 ################
-# An isogram is a word that has no repeating letters, consecutive or 
-# non-consecutive. Implement a function that determines whether a 
-# string that contains only letters is an isogram. Assume the empty 
-# string is an isogram. Ignore letter case.
+# Count the number of Duplicates
+# Write a function that will return the count of distinct 
+# case-insensitive alphabetic characters and numeric digits 
+# that occur more than once in the input string. The input 
+# string can be assumed to contain only alphabets (both uppercase 
+# and lowercase) and numeric digits.
 
-def is_isogram(string):
-    #your code here
-    stri = []
-    prev = None
-    for i in range(len(string)):
-        print(i)
-    return string
+# def duplicate_count(text):
+#     text = text.lower()
+#     dic = {}
+#     count = 0
+#     for letter in text:
+#         dic.setdefault(letter, 0)
+#         dic[letter] += 1
+#     for k, v in dic.items():
+#         if v > 1:
+#             count +=1
+#     return count
 
-#print(is_isogram("Dermatoglyphics")) #== true
-print(is_isogram("aba")) #== false
-#print(is_isogram("moOse")) #== false # -- ignore letter case
+#print(duplicate_count("abcde"))
+# #print(duplicate_count("abcsdfSDAFea"))
+# print(duplicate_count("aaaabbbbbb"))
+#print(duplicate_count("indivisibility"))
+
+################### Kata 6
+# Build Tower
+# Build Tower by the following given argument:
+# number of floors (integer and always greater than 0).
+
+# Tower block is represented as *
+# import pprint
+
+# def tower_builder(n_floors):
+#     # build here
+#     drawing = []
+#     width = n_floors*2-1 #lvl + lvl-1
+#     for i in range(1, width, 2):
+#         brick = i*'*'
+#         drawing.append(brick.center(width, " "))
+#     drawing = '\n'.join(drawing)
+#     return drawing
+
+# #pprint.pprint(tower_builder(3))
+# print(tower_builder(5))
+
+# # print('*'.center(5, " "))
+# # print('***'.center(5, " "))
+# # print('*****'.center(5, " "))
+
+
+################### Kata 6
+# Sort the odd
+# You have an array of numbers.
+# Your task is to sort ascending odd numbers but even 
+# numbers must be on their places.
+
+# Zero isn't an odd number and you don't need to move it. 
+# If you have an empty array, you need to return it.
+
+# Example
+
+# sort_array([0, 5, 3, 2, 8, 1, 4]) == [0, 1, 3, 2, 8, 5, 4]
+
+def sort_array(source_array):
+    # Return a sorted array.
+    # create dictionary. place = key, value = value
+    dic = {}
+    for i in source_array:
+        dic.setdefault(source_array.index(i), i)
+    for x, y in dic.items():
+        if y % 2 != 0:
+            print(x, y)
+    return dic
+
+print(sort_array([0, 5, 3, 2, 8, 1, 4]))
