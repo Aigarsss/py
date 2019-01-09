@@ -134,27 +134,100 @@
 
 
 ################### Kata 6
-# Sort the odd
-# You have an array of numbers.
-# Your task is to sort ascending odd numbers but even 
-# numbers must be on their places.
+# If we list all the natural numbers below 10 that are multiples 
+# of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
-# Zero isn't an odd number and you don't need to move it. 
-# If you have an empty array, you need to return it.
+# Finish the solution so that it returns the sum of all the multiples 
+# of 3 or 5 below the number passed in.
 
-# Example
+# Note: If the number is a multiple of both 3 and 5, only count it once.
 
-# sort_array([0, 5, 3, 2, 8, 1, 4]) == [0, 1, 3, 2, 8, 5, 4]
+# def solution(number):
+#     nums = []
+#     for i in range(1,number):
+#         if i % 3 == 0 and i % 5 == 0: 
+#             nums.append(i)
+#         elif i % 3 == 0 or i % 5 == 0:
+#             nums.append(i)
+#     return sum(nums)
 
-def sort_array(source_array):
-    # Return a sorted array.
-    # create dictionary. place = key, value = value
-    dic = {}
-    for i in source_array:
-        dic.setdefault(source_array.index(i), i)
-    for x, y in dic.items():
-        if y % 2 != 0:
-            print(x, y)
-    return dic
+# print(solution(10))
 
-print(sort_array([0, 5, 3, 2, 8, 1, 4]))
+
+################### Kata 7
+# Complete the method/function so that it converts dash/underscore 
+# delimited words into camel casing. The first word within the output 
+# should be capitalized only if the original word was capitalized.
+
+
+# def to_camel_case(text):
+#     li = list(text)
+#     for i in range(len(li)):
+#         if li[i] == "-" or li[i] == "_":
+#             li[i+1] = li[i+1].upper()
+#     stri = "".join(li)
+#     newstri = stri.replace("-", "").replace("_", "")
+#     return newstri
+
+# print(to_camel_case("the-stealth-warrior")) # returns "theStealthWarrior"
+# print(to_camel_case("The_Stealth_Warrior")) # returns "TheStealthWarrior"
+
+#################### Kata 8
+# Write a function that takes an integer as input, and returns the 
+# number of bits that are equal to one in the binary representation 
+# of that number. You can guarantee that input is non-negative.
+
+# Example: The binary representation of 1234 is 10011010010, so the 
+# function should return 5 in this case
+
+# def countBits(n):
+#     value = format(n, "08b")
+#     count = 0
+#     for i in value:
+#         if i == str(1):
+#             count +=1
+#     return count
+
+# print(countBits(1234))
+
+################## Kata 8
+# Does my number look big in this?
+# A Narcissistic Number is a number which is the sum of its own digits, 
+# each raised to the power of the number of digits in a given base. 
+# In this Kata, we will restrict ourselves to decimal (base 10).
+
+# For example, take 153 (3 digits):
+#     1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
+# and 1634 (4 digits):
+#     1^4 + 6^4 + 3^4 + 4^4 = 1 + 1296 + 81 + 256 = 1634
+# The Challenge:
+
+# Your code must return true or false depending upon whether the given 
+# number is a Narcissistic number in base 10.
+
+# Error checking for text strings or other invalid inputs is not required, 
+# only valid integers will be passed into the function.
+
+# def narcissistic(value):
+#     le = len(str(value))
+#     stringify = str(value)
+#     total = 0
+#     for i in range(le):
+#         total += int(stringify[i])**le
+#     if total == value:
+#         return True
+#     else:
+#         return False
+
+# print(narcissistic(153))
+
+###################### Kata 9
+
+# def song_decoder(song):
+#     x = song.replace("WUB", " ")
+#     spl =  x.split()
+#     return " ".join(spl)
+
+# print(song_decoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB"))
+#   # =>  WE ARE THE CHAMPIONS MY FRIEND
+
