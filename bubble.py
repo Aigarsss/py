@@ -450,3 +450,172 @@
 #  5 1 3 4 1   50 + 2 * 100 = 250
 #  1 1 1 3 1   1000 + 100 = 1100
 #  2 4 4 5 4   400 + 50 = 450
+
+# def score(dice):
+#     sum = 0
+#     c1 = dice.count(1)
+#     c5 = dice.count(5)
+
+#     if c1 >= 3:
+#         c1 -= 3
+#         sum += 1000
+#     sum += c1 * 100
+
+#     if c5 >= 3:
+#         c5 -= 3
+#         sum += 500
+#     sum += c5 * 50
+
+#     if dice.count(2) >= 3: sum += 200
+#     if dice.count(3) >= 3: sum += 300
+#     if dice.count(4) >= 3: sum += 400
+#     if dice.count(6) >= 3: sum += 600
+
+#     return sum
+
+
+# print(score([2, 3, 4, 6, 2])) # 0)
+# print(score([4, 4, 4, 3, 3]))#, 400)
+# print(score([2, 4, 4, 5, 4])) #, 450)
+# print(score([1, 1, 1, 3, 3]))#, 1000)
+# print(score([1, 1, 1, 5, 5]))
+
+################# kata
+# We want to create a function that will add numbers together 
+# when called in succession.
+
+# add(1)(2);
+# // returns 3
+# We also want to be able to continue to add numbers to our chain.
+
+# add(1)(2)(3); // 6
+# add(1)(2)(3)(4); // 10
+# add(1)(2)(3)(4)(5); // 15
+# and so on.
+
+# A single call should return the number passed in.
+
+# add(1); // 1
+# We should be able to store the returned values and reuse them.
+
+# var addTwo = add(2);
+# addTwo; // 2
+# addTwo + 5; // 7
+# addTwo(3); // 5
+# addTwo(3)(5); // 10
+# We can assume any number being passed in will be valid whole number.
+
+# class add(int):
+#     def __call__(self, value):
+#         return add(self + value)
+# #return lambda y = None: x if y is None else add(x+y)
+
+# print(add(5))
+
+############################ Kata
+# The maximum sum subarray problem consists in finding the maximum 
+# sum of a contiguous subsequence in an array or list of integers:
+
+# maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4])
+# # should be 6: [4, -1, 2, 1]
+# Easy case is when the list is made up of only positive numbers and 
+# the maximum sum is the sum of the whole array. If the list is made 
+# up of only negative numbers, return 0 instead.
+
+# Empty list is considered to have zero greatest sum. Note that the 
+# empty list or array is also a valid sublist/subarray.
+
+# def maxSequence(arr):
+#     current = 0
+#     max = 0
+#     for i in arr:
+#         current += i
+#         if current < 0: current = 0
+#         if current > max: max = current
+#     return max
+
+
+# print(maxSequence([])) # 0)
+# print(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4])) # 6)
+
+####################### Kata
+
+# def solution(string, ending):
+#     if string.endswith(ending):
+#         return True
+#     else:
+#         return False
+
+# print(solution('abc', 'bc'))
+
+####################### Kata
+# isogram
+# An isogram is a word that has no repeating letters, 
+# consecutive or non-consecutive. Implement a function that 
+# determines whether a string that contains only letters is an isogram. 
+# Assume the empty string is an isogram. Ignore letter case.
+
+# def is_isogram(string):
+#     string = string.lower()
+#     for i in range(len(string)):
+#         if string[i] in string[i+1:]:
+#             print(string[i], string[i+1:])
+#             return False
+#     return True
+
+# def is_isogram(string):
+#     print(len(string))
+#     print()
+#     print(len(set(string.lower())))
+#     print(set(string.lower()))
+#     return len(string) == len(set(string.lower()))
+
+# #print(is_isogram("Dermatoglyphics"))# true
+# #print(is_isogram("aba" ))# false
+# #print(is_isogram("moOse" ))#false # -- ignore letter case
+
+################### Kata
+# Sum of Pairs
+# Given a list of integers and a single sum value, return the first 
+# two values (parse from the left please) in order of appearance that 
+# add up to form the sum.
+
+# sum_pairs([11, 3, 7, 5],         10)
+# #              ^--^      3 + 7 = 10
+# == [3, 7]
+
+# sum_pairs([4, 3, 2, 3, 4],         6)
+# #          ^-----^         4 + 2 = 6, indices: 0, 2 *
+# #             ^-----^      3 + 3 = 6, indices: 1, 3
+# #                ^-----^   2 + 4 = 6, indices: 2, 4
+# #  * entire pair is earlier, and therefore is the correct answer
+# == [4, 2]
+
+# sum_pairs([0, 0, -2, 3], 2)
+# #  there are no pairs of values that can be added to produce 2.
+# == None/nil/undefined (Based on the language)
+
+# sum_pairs([10, 5, 2, 3, 7, 5],         10)
+# #              ^-----------^   5 + 5 = 10, indices: 1, 5
+# #                    ^--^      3 + 7 = 10, indices: 3, 4 *
+# #  * entire pair is earlier, and therefore is the correct answer
+# == [3, 7]
+# Negative numbers and duplicate numbers can and will appear.
+
+# There will also be lists tested of lengths upwards of 
+# 10,000,000 elements. Be sure your code doesn't time out.
+
+# def sum_pairs(ints, s):
+#     li =[]
+#     for i in range(len(ints)):
+#         for a in range(i+1,len(ints)):
+#             if ints[i] + ints[a] == s:
+#                 li.append(ints[i])
+#                 li.append(ints[a])
+#                 return li
+
+# print(sum_pairs([4, 3, 2, 3, 4], 6)) # 4, 2
+
+# #Times out.
+
+
