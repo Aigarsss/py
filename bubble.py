@@ -13,10 +13,89 @@
 # print(li)
 # print(bubble_sort(li))
 
-############################
+############################ bubble sort again
+
+# # Sweep part non optimized
+# example = [5, 4, 2, 3, 1, 0]
+
+# def sweep(numbers):
+#     n = len(numbers)
+#     first_index = 0
+#     second_index = 1
+    
+#     while second_index < n:
+#         first_number = numbers[first_index]
+#         second_number = numbers[second_index]
+        
+#         if first_number > second_number:
+#             numbers[first_index] = second_number
+#             numbers[second_index] = first_number
+
+#         first_index += 1
+#         second_index += 1
 
 
+# def bubble_sort(numbers):
+#     n = len(numbers)
+#     for i in range(n):
+#         sweep(numbers)
+#     return numbers
+
+# #print(sweep(example))
+# print(bubble_sort(example))
 
 
+# Sweep part optimized
+# example = [5, 4, 2, 3, 1, 0]
+
+# def sweep(numbers, prevPasses): # prev passess added
+#     n = len(numbers)
+#     first_index = 0
+#     second_index = 1
+    
+#     while second_index < (n - prevPasses): # prev passess added
+#         first_number = numbers[first_index]
+#         second_number = numbers[second_index]
+        
+#         if first_number > second_number:
+#             numbers[first_index] = second_number
+#             numbers[second_index] = first_number
+        
+#         first_index += 1
+#         second_index += 1
 
 
+# def bubble_sort(numbers):
+#     n = len(numbers)
+#     for i in range(n):
+#         sweep(numbers, i) # i passess added
+#     return numbers
+
+# #print(sweep(example))
+# print(bubble_sort(example))
+
+########################################
+# 1. Sort a list of 25 numbers in REVERSE order
+# Given the array of numbers:
+
+# nums = [21, 4, 2, 13, 10, 0, 19, 11, 7, 5, 23, 18, 9, 14, 6, 8, 1, 20, 17, 3, 16, 22, 24, 15, 12]
+
+# def sort_desc(nums):
+#     n = len(nums)
+#     for i in range(n):
+#         first_index = 0
+#         second_index = 1
+#         while second_index < n:
+#             a = nums[first_index]
+#             b = nums[second_index]
+#             if nums[first_index] < nums[second_index]:
+#                 nums[second_index] = a
+#                 nums[first_index] = b
+#             first_index += 1
+#             second_index += 1
+#     return nums
+
+# print(sort_desc(nums))
+
+#################
+print('a'>'b')

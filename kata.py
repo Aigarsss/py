@@ -616,27 +616,50 @@
 # Ingredients that are not present in the objects, can be considered as 0.
 
 
-def cakes(recipe, available):
-    li = []
-    counter =[]
-    if recipe.keys() == available.keys() or available.keys() - recipe.keys():
-        for key in recipe.keys():
-            if key in available.keys():
-                counter.append(int(available[key]/recipe[key]))
-        return min(counter)
-    else:
-        li = 0
-        return li
+# def cakes(recipe, available):
+#     li = []
+#     counter =[]
+#     if recipe.keys() == available.keys() or available.keys() - recipe.keys():
+#         for key in recipe.keys():
+#             if key in available.keys():
+#                 counter.append(int(available[key]/recipe[key]))
+#         return min(counter)
+#     else:
+#         li = 0
+#         return li
 
 
-# recipe = {'flour': 300, 'oil': 100, 'milk': 100, 'apples': 3, 'sugar': 150} 
-# available = {'flour': 2000, 'milk': 2000, 'sugar': 500}
-
-recipe = {"flour": 500, "sugar": 200, "eggs": 1}
-available = {"flour": 1200, "sugar": 1200, "eggs": 5, "milk": 200}
+# # recipe = {'flour': 300, 'oil': 100, 'milk': 100, 'apples': 3, 'sugar': 150} 
+# # available = {'flour': 2000, 'milk': 2000, 'sugar': 500}
 
 # recipe = {"flour": 500, "sugar": 200, "eggs": 1}
-# available = {"flour": 1200, "sugar": 1200, "eggs": 5}
+# available = {"flour": 1200, "sugar": 1200, "eggs": 5, "milk": 200}
 
-print(cakes(recipe, available)) 
+# # recipe = {"flour": 500, "sugar": 200, "eggs": 1}
+# # available = {"flour": 1200, "sugar": 1200, "eggs": 5}
+
+# print(cakes(recipe, available)) 
+
+
+##############################
+# Your task is to remove all duplicate words from string, 
+# leaving only single (first) words entries.
+# Input:
+# 'alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'
+# Output:
+# 'alpha beta gamma delta'
+
+# s = 'alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'
+
+# def remove_duplicate_words(s):
+#     split = s.split(" ")
+#     new =[]
+#     for i in range(len(split)):
+#         if split[i] not in new:
+#             new.append(split[i])
+#     return " ".join(new)
+
+# print(remove_duplicate_words(s))
+
+####################################
 
