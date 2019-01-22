@@ -98,4 +98,52 @@
 # print(sort_desc(nums))
 
 #################
-print('a'>'b')
+# print('a'>'b')
+
+# houses = ['Tim', 'Tommy', 'Brad']
+
+# def deliver_presents_iteratively():
+#     for i in houses:
+#         print("Present delivered to: " + i)
+
+# print(deliver_presents_iteratively())
+
+# print(5//2)
+
+# recursion
+# 1 + + 3 ... 10
+
+# def sum_recursive(current_number, accumulated_sum):
+#     #base case
+#     if current_number == 11:
+#         return accumulated_sum
+#     else:
+#         return sum_recursive(current_number + 1, accumulated_sum + current_number)
+
+# print(sum_recursive(1,0))
+
+#### factorial 5! = 5x4x3x2x1
+# num = 5
+# def factorial(num):
+#     if num == 0:
+#         return 1
+#     else:
+#         return num * factorial(num-1)
+
+# print(factorial(num))
+
+# print(factorial(num))
+# 1 1 2 3 5 8 13 21 34 55
+# 1 2 3 4 5 6  7  8  9 10
+
+def fib(n):
+    return n
+
+
+print(fib(5))
+
+print([i for i in range(10) if i>6])
+
+f = lambda a: a+a
+
+print(f(5))
