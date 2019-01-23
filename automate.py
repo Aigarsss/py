@@ -400,3 +400,239 @@
 # text = '\n'.join(lines)
 
 # pyperclip.copy(text)
+
+######################### project
+# tableData = [['apples', 'oranges', 'cherries', 'banana'],
+#              ['Alice', 'Bob', 'Carol', 'David'],
+#              ['dogs', 'cats', 'moose', 'goose']]
+
+# def printTable(data):
+#     # newData = []
+#     # for n in data: #concat the strings into one long string for max
+#     #     newData += n
+#     # width = len(max(newData, key=len)) # get the max len string
+    
+    
+#     width = [0] * len(data)
+#     for n in range(len(data)):
+#         if len(max(data[n], key=len)) > width[n]:
+#             width[n] = len(max(data[n], key=len))
+    
+#     for e in range(4):
+#         for i in range(len(data)):
+#             print(data[i][e].rjust(width[i]), end = " ")   
+#         print()
+
+# printTable(tableData)
+
+################ Chapter 7 – Pattern Matching with Regular Expressions
+
+# def isPhoneNumber(text):
+#     if len(text) != 12:
+#         return False
+#     for i in range(3):
+#         if not text[i].isdecimal():
+#             return False
+#     if text[3] != '-':
+#         return False
+#     for i in range(4,7):
+#         if not text[i].isdecimal():
+#             return False
+#     if text[7] != '-':
+#         return False
+#     for i in range(8,12):
+#         if not text[i].isdecimal():
+#             return False
+#     return True
+
+# message = 'Call me at 415-555-1011 tomorrow. 415-555-9999 is my office.'
+# for i in range(len(message)):
+#     chunk = message[i:i+12]
+#     if isPhoneNumber(chunk):
+#         print('Phone number found: ' + chunk)
+# print('Done')
+
+r'''
+REGEX
+\d digit character 0 - 9
+\D any character that is not numeric
+\w any letter, numeric digit or the underscore
+\W any character that is not a letter, numeric digit or underscore
+\s space, tab or newline
+\S any character that is not space, tab or newline
+. any char except new line
+The ? matches zero or one of the preceding group.
+The * matches zero or more of the preceding group.
+The + matches one or more of the preceding group.
+The {n} matches exactly n of the preceding group.
+The {n,} matches n or more of the preceding group.
+The {,m} matches 0 to m of the preceding group.
+The {n,m} matches at least n and at most m of the preceding group.
+{n,m}? or *? or +? performs a nongreedy match of the preceding group.
+^spam means the string must begin with spam.
+spam$ means the string must end with spam.
+The . matches any character, except newline characters.
+\d, \w, and \s match a digit, word, or space character, respectively.
+\D, \W, and \S match anything except a digit, word, or space character, respectively.
+[abc] matches any character between the brackets (such as a, b, or c).
+[^abc] matches any character that isn’t between the brackets.
+
+
+{x} match the previous pattern x times (like \d{2})
+import re regex module
+regex_object = re.compile(r'\d{3}-\d{3}') # this would match 444-552
+result = regex_object.search('444-552')
+print(result.group()) # returns the match 444-552
+print(re.compile(r'\d{3}-\d{3}').search('444-552').group()) #together
+
+() creates groups - (\d{2})(\d{3})
+import re
+regex_object = re.compile(r'(\d{3})-(\d{4})')
+result = regex_object.search('345-2345')
+print(result.group(1))
+print(result.group(2))
+print(result.group())
+print(result.groups())
+first_group, second_group = result.groups()
+print(first_group)
+
+import re
+regex_object = re.compile(r'(\(\d{3}\)) (\d{2}-\d{2})') # escaping parentheses
+result = regex_object.search('This is my number (123) 12-24')
+print(result.group())
+
+| # this is OR. 1|2 == 1 or 2 returns first occurence
+import re
+regex_object = re.compile(r'Batman|Tina Fey')
+result = regex_object.search('Batman and Tina Fey')
+print(result.group())
+result = regex_object.search('Tina Fey and Batman')
+print(result.group())
+
+batRegex = re.compile(r'Bat(man|mobile|copter|bat)')
+result = batRegex.search('Batmobile lost a wheel')
+print(result.group(), result.group(1), sep="**")
+
+batRegex = re.compile(r'Bat(wo)?man') # ? is an optional part
+result = batRegex.search('The adventures of Batman')
+print(result.group())
+result = batRegex.search('The adventures of Batwoman')
+print(result.group())
+
+phoneRegex = re.compile(r'(\d\d\d-)?\d\d\d-\d\d\d\d')
+result = phoneRegex.search('My number is 415-555-4242')
+print(result.group())
+result = phoneRegex.search('My number is 555-4242')
+print(result.group())
+
+batRegex = re.compile(r'Bat(wo)*man') # * can repeat 0 or infinite times
+result = batRegex.search('The Adventures of Batman')
+print(result.group())
+result = batRegex.search('The Adventures of Batwowowoman')
+print(result.group())
+
+batRegex = re.compile(r'Bat(wo)+man') # + means mach 1 or more
+result = batRegex.search('Adventures of Batman')
+print(result == None)
+result = batRegex.search('Adventures of Batwowowoman')
+print(result.group())
+
+haRegex = re.compile(r'(Ha){3}')
+result = haRegex.search('HaHaHa')
+print(result.group())
+
+haRegex = re.compile(r'(Ha){3,5}') # greedy. will return longest match by def
+result = haRegex.search('HaHaHaHa') # HaHaHaHa
+print(result.group())
+haRegex = re.compile(r'(Ha){3,5}?') #non greedy because of ?. will return shortest match
+result = haRegex.search('HaHaHaHa') # HaHaHa
+print(result.group())
+
+findall() will find all matches vs search() will find the first one
+phoneNumRegex = re.compile(r'\d{3}-\d{3}-\d{4}')
+result = phoneNumRegex.search('Cell: 415-555-9999 Work: 212-555-0000')
+print(result.group())
+
+phoneNumRegex = re.compile(r'\d{3}-\d{3}-\d{4}') # Cannot have groups for findall
+result = phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000')
+print(result)
+
+phoneNumRegex = re.compile(r'(\d{3})-(\d{3})-(\d{4})') # Has groups
+result = phoneNumRegex.findall('Cell: 415-555-9999 Work: 212-555-0000')
+print(result) # returns tuples within list
+
+#character classes
+xmasReg = re.compile(r'\d+\s\w+')
+result = xmasReg.findall('12 drummers, 11 pipers, 10 lords, 9 ladies, 8 maids, 7 swans, 6 geese, 5 rings, 4 birds, 3 hens, 2 doves, 1 partridge')
+print(result)
+
+vowelRegex = re.compile(r'[aeiouAEIOU?]') # custom character class, will match these. special chars dont need to be escaped, see ?
+result = vowelRegex.findall('Robocop eats baby food. BABY FOOD?.')
+print(result)
+
+vowelRegex = re.compile(r'[^aeiouAEIOU?]') # ^ will match the opposite
+result = vowelRegex.findall('Robocop eats baby food. BABY FOOD?.')
+print(result)
+
+beginsWithHello = re.compile(r'^Hello') # ^ states that it must begin
+result = beginsWithHello.search('Hello world')
+print(result)
+
+beginsWithHello = re.compile(r'world$') # $ states that it must end
+result = beginsWithHello.search('Hello world')
+print(result)
+
+beginsWithHello = re.compile(r'^\d+$') # entire string must match if ^ $ is used
+result = beginsWithHello.search('14151x24123') # none, must be all numbers
+print(result)
+
+atRegex = re.compile(r'.at') #. is a wildcard (for one char)
+result = atRegex.findall('The cat in the hat sat on the flat mat.')
+print(result)
+
+nameRegex = re.compile(r'First Name: (.*) Last Name: (.*)') #match everyhting
+result = nameRegex.search('First Name: Al Last Name: Sweigart')
+print(result.group(1), result.group(2))
+
+nongreedyRegex = re.compile(r'<.*?>') #non greedy
+result = nongreedyRegex.search('<To serve man> for dinner.>')
+print(result.group())
+
+nongreedyRegex = re.compile(r'<.*>') # greedy
+result = nongreedyRegex.search('<To serve man> for dinner.>')
+print(result.group())
+
+noNewlineRegex = re.compile(r'.*', re.DOTALL) # include \n
+result = noNewlineRegex.search('Serve the public trust.\nProtect the innocent.\nUphold the law.')
+print(result.group())
+
+robocop = re.compile(r'robocop', re.IGNORECASE) # or re.I . ignores case
+result = robocop.search('RobOCop is part man, part machine, all cop.')
+print(result.group())
+
+namesRegex = re.compile(r'Agent \w+') #replacing matches
+result = namesRegex.sub('CENSORED', 'Agent Alice gave the secret documents to Agent Bob.')
+print(result)
+
+agentNamesRegex = re.compile(r'Agent (\w)\w*') # replacing matcches with group results
+result = agentNamesRegex.sub(r'\1****', 'Agent Alice told Agent Carol that Agent Eve knew Agent Bob was a double agent.')
+print(result)
+
+
+'''
+# phoneRegex = re.compile(r'''(
+#     (\d{3}|\(\d{3}\))?            # area code
+#     (\s|-|\.)?                    # separator
+#     \d{3}                         # first 3 digits
+#     (\s|-|\.)                     # separator
+#     \d{4}                         # last 4 digits
+#     (\s*(ext|x|ext.)\s*\d{2,5})?  # extension
+#     )''', re.VERBOSE) # re.VERBOSE lets you have multi line regex
+
+# someRegexValue = re.compile(r'foo', re.IGNORECASE | re.DOTALL | re.VERBOSE) # to combine all
+
+### project: Phone Number and Email Address Extractor
+
+
+
+
