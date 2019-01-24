@@ -633,6 +633,99 @@ print(result)
 
 ### project: Phone Number and Email Address Extractor
 
+# import pyperclip, re
+# # phone regex
+# phoneRegex = re.compile(r'''(
+#     (\d{3}|\(\d{3}\))?
+#     (\s|-|\.)?
+#     (\d{3})
+#     (\s|-|\.)
+#     (\d{4})
+#     (\s*(ext|x|ext.)\s*(\d{2,5}))?
+# )''', re.VERBOSE)
+
+# # email regex
+# emailRegex = re.compile(r'''(
+#     [a-zA-Z0-9._%+-]+ #username
+#     @                  #@
+#     [a-zA-Z0-9.-]+      #domain
+#     (\.[a-zA-Z]{2,4})
+# )''', re.VERBOSE)
+
+# # TODO: Find matches in clipboard text.
+# text = str(pyperclip.paste())
+# matches = []
+# for groups in phoneRegex.findall(text):
+#     phoneNum = '-'.join([groups[1],groups[3],groups[5]])
+#     if groups[8] != '':
+#         phoneNum += ' x' + groups[8]
+#     matches.append(phoneNum)
+# for groups in emailRegex.findall(text):
+#     matches.append(groups[0])
+
+# # TODO: Copy results to the clipboard.
+# if len(matches) > 0:
+#     pyperclip.copy('\n'.join(matches))
+#     print('copied to clipboard')
+#     print('\n'.join(matches))
+# else:
+#     print('No match found')
 
 
+
+# import re
+
+# # nakamotoRegex = re.compile(r'[A-Z][a-z]*\sNakamoto')
+# # result = nakamotoRegex.search('Mr Nakamoto')
+# # print(result.group())
+
+# regex = re.compile(r'(Alice|Bob|Carol)\s(eats|pets|throws)\s(apples|cats|baseballs)\.', re.IGNORECASE)
+# result = regex.search('Carol throws baseballs.')
+# print(result.group())
+
+########### practice projects
+
+## strong password detection
+# import re
+# text = 'Password1'
+
+# def validatePass(passw):
+#     regex_num = re.compile(r'[0-9]+')
+#     regex_len = re.compile(r'(.*){8,}')
+#     regex_cap = re.compile(r'[A-Z]+')
+#     regex_small = re.compile(r'[a-z]+')
+#     # print(regex_num.search(passw).group())
+#     # print(regex_len.search(passw).group())
+#     # print(regex_cap.search(passw).group())
+#     # print(regex_small.search(passw).group())
+
+#     if bool(regex_num.search(passw)) and bool(regex_len.search(passw)) and bool(regex_cap.search(passw)) and bool(regex_small.search(passw)):
+#         return 'Pass is considered strong' # if matched
+#     else:
+#         return 'consider a different pass' # id no match
+
+# print(validatePass(text))
+
+
+## Regex Version of strip()
+# import re
+# string1 = '    strip     '
+# print('*' + string1.strip() + '*')
+
+# string2 = '***24f qas2    '
+# def stripped(text, char):
+#     if char == '':
+#         regex_left = re.compile(r'^[\s]*')
+#         text = regex_left.sub('', text)
+#         regex_right = re.compile(r'[\s]*$')
+#         text = regex_right.sub('', text)
+#         return text
+#     else:
+#         regex_left = re.compile(r'^[{}]*'.format(char))
+#         text = regex_left.sub('', text)
+#         regex_right = re.compile(r'[{}]*$'.format(char))
+#         text = regex_right.sub('', text)
+#         return text
+
+# print('*' + stripped(string2, '*') + '*')
 
