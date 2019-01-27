@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "debugging.py", line 29, in <module>
+    raise Exception('This is the error msg')
+Exception: This is the error msg
