@@ -6,8 +6,7 @@
 
 #  python pdfParanoia2.py
 
-import os, PyPDF2, sys
-
+import os, PyPDF2
 
 
 for foldernames, subfolders, filenames in os.walk('.\\'):
@@ -15,4 +14,21 @@ for foldernames, subfolders, filenames in os.walk('.\\'):
         if filename.endswith('.pdf'):
             name = os.path.join(os.path.abspath(foldernames), filename)
             if PyPDF2.PdfFileReader(open(name, 'rb')).isEncrypted:
-                print('do x with ' + filename)
+                    print('File ' + os.path.basename(name) +  ' found.')
+                    password =  input('Enter pass to use for decrypt: ')
+
+                    pdfFile = open(name, 'rb')
+                    readPdf = PyPDF2.PdfFileReader(pdfFile)
+                    writePdf = PyPDF2.PdfFileWriter()
+
+                    if readPdf.decrypt(password):
+                        for pageNum in range(readPdf.numPages):
+                            writePdf.addPage(readPdf.getPage(pageNum))
+                        
+                        resultPdf = open(name.strip('.pdf') + '_unencrypted.pdf' , 'wb')
+                        writePdf.write(resultPdf)
+                        resultPdf.close()
+                        print(os.path.basename(name.strip('.pdf')) + '_unencrypted.pdf is now available'  )
+
+                    else:
+                        print('Password provided was wrong.')
