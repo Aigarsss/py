@@ -27,7 +27,7 @@ for foldernames, subfolders, filenames in os.walk('.\\'):
                         
                         resultPdf = open(name.strip('.pdf') + '_unencrypted.pdf' , 'wb')
                         writePdf.write(resultPdf)
-                        resultPdf.close()
+
                         print(os.path.basename(name.strip('.pdf')) + '_unencrypted.pdf is now available'  )
 
                     else:

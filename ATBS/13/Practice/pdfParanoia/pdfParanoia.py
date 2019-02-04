@@ -38,7 +38,7 @@ else:
         # save as new file with same name, but with _encrypted
         resultPdf = open(file.strip('.pdf') + '_encrypted.pdf', 'wb')
         writePdf.write(resultPdf)
-        pdfFile.close()
+        # pdfFile.close()
         resultPdf.close()
 
         # program must read the file and check that it can be decrypted

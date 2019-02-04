@@ -148,6 +148,9 @@ paraObj2 = doc.add_paragraph('This is the third')
 paraObj1.add_run(' this text is being dded to the second paragraph')
 doc.save('multipara.docx')
 
+# breaks
+doc.paragraphs[0].runs[0].add_break(docx.text.WD_BREAK.PAGE)
+
 # adding headings
 import docx
 doc = docx.Document()
