@@ -115,12 +115,32 @@ import threading
 threadObj = threading.Thread(target=print, args = ['Cats', 'Dogs','Frogs'], kwargs={'sep': ' & '})
 threadObj.start()
 
+# Launching Other Programs from Python
+import subprocess
+subprocess.Popen('C:\\Windows\\System32\\calc.exe')
+
+# wait until program is closed. This didnt work.
+import subprocess
+calcProc = subprocess.Popen('c:\\Windows\\System32\\calc.exe')
+print(calcProc.poll == None) # i got false, should have been true.
+print(calcProc.wait()) # 0
+print(calcProc.poll()) # 0
+
+# Passing Command Line Arguments to Popen()
+import subprocess
+subprocess.Popen(['c:\\windows\\notepad.exe', 'C:\\hello.txt'])
+
+
 
 '''
+# Opening Files with Default Applications
 
+fileObj = open('hello.txt', 'w')
+fileObj.write('Hello world!')
 
-
-
+fileObj.close()
+import subprocess
+subprocess.Popen(['start', '.\\hello.txt'], shell=True) # shell true needed for win
 
 
 
