@@ -11,13 +11,11 @@
 # Call subprocess.Popen() to open the sound file with the default 
 # application.
 
- ## this does not work. need to check
-
 import time, subprocess
 
 timeLeft = 60
 while timeLeft > 0:
-    print(timeLeft, end='')
+    print(timeLeft)
     time.sleep(1)
     timeLeft  -= 1
 
