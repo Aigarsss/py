@@ -663,9 +663,3 @@
 
 ####################################
 
-def generateShape(int):
-    int = int * "+"
-    for i in range(len(int)):
-        return int
-
-print(generateShape(5))
