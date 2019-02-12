@@ -710,8 +710,18 @@
 # expanded_form(42) # Should return '40 + 2'
 # expanded_form(70304) # Should return '70000 + 300 + 4'
 
-def expanded_form(num):
+# def expanded_form(num):
+#     result = ''
+#     strNum = str(num)
+#     for i in range(len(str(num))):
+#         if strNum[i] == '0':
+#             continue
+#         else:
+#             result += strNum[i] + (len(str(num)) - (i+1))*'0' + ' + '
+#     return result.rstrip(' + ')
 
-    return num
+# print(expanded_form(1023))
 
-print(expanded_form(112))
+#########################
+
+
