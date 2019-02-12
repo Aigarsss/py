@@ -663,3 +663,43 @@
 
 ####################################
 
+# Complete the function that determines if a given number is a power of two.
+# does not work because of performance on server.
+# def power_of_two(x):
+#     for i in range(1, x+1):
+#         if 2**i == x:
+#             return True
+#         else:
+#             continue
+#     return False
+
+# print(power_of_two(4096))
+
+######################
+
+# def comp(array1, array2):
+#     if array1 == None or array2 == None:
+#         return False
+#     else:
+#         sArray1 = sorted(array1)
+#         sArray2 = sorted(array2)
+#         for i in range(len(sArray1)):
+#             sArray1[i] = sArray1[i]**2
+#         if sArray1 == sArray2:
+#             return True
+#         else:
+#             return False
+
+# a1 = [121, 144, 19, 161, 19, 144, 19, 11]
+# a2 = [11*11, 121*121, 144*144, 19*19, 161*161, 19*19, 144*144, 19*19]
+# print(comp(a1, a2))
+
+# answer:
+# def comp(array1, array2):
+#     try:
+#         return sorted([i ** 2 for i in array1]) == sorted(array2)
+#     except:
+#         return False
+
+########################
+
