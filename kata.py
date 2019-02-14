@@ -724,4 +724,27 @@
 
 #########################
 
+# def find_uniq(arr):
+#     # if first or last
+#     if arr[0] != arr[-1]:
+#         if arr[0] == arr[1]:
+#             return arr[-1]
+#         else:
+#             return arr[0]
+
+#     for i in range(len(arr)-1):
+#         currentN = arr[i]
+#         nextN = arr[i+1]
+        
+#         # normal cases
+#         if currentN != nextN:
+#             if nextN == arr[i+2]:
+#                 return currentN
+#             else:
+#                 return nextN
+#         elif currentN == nextN:
+#             continue
+
+# print(find_uniq([8, 8, 8, 8, 8, 8, 8, 7]))
+
 
