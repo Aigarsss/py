@@ -747,4 +747,72 @@
 
 # print(find_uniq([8, 8, 8, 8, 8, 8, 8, 7]))
 
+#################
+# def find_it(seq):
+#     dictA = {}
+#     for i in seq:
+#         dictA.setdefault(i, 0)
+#         dictA[i] +=1
+#     for key, value in dictA.items():
+#         if value % 2 != 0:
+#             return key
+#         else:
+#             continue
 
+# print(find_it([20,1,-1,2,-2,3,3,5,5,1,2,4,20,4,-1,-2,5]))
+
+#################
+# Modify the kebabize function so that it converts a camel case string into a kebab case.
+
+# def kebabize(string):
+#     #your code here
+
+#     singles = list(string)
+#     singles[0] = singles[0].lower()
+#     for count, i in enumerate(singles):
+#         # upper letters
+#         if i.isupper():
+#             #print(i, 'Position: ' + str(count))
+#             singles[count] = '-' + i.lower()    
+#         # numbers
+#         if i.isnumeric():
+#             #singles.remove(i)
+#             singles[count] = ''
+#     return ''.join(singles)
+
+# print(kebabize('CamelsHaveThreeHumps'))
+# print(kebabize('42'))
+# print(kebabize('s-y-f2-n-daq-sdgr-cy1-ky'))
+# print(kebabize('my-camel-hasHumps'))
+
+#################
+# You probably know the "like" system from Facebook and other pages. 
+# People can "like" blog posts, pictures or other items. We want to create 
+# the text that should be displayed next to such an item.
+
+# Implement a function likes :: [String] -> String, which must take in 
+# input array, containing the names of people who like an item. It must 
+# return the display text as shown in the examples:
+
+# def likes(names):
+#     #your code here
+#     if len(names) == 0:
+#         return 'no one likes this'
+#     elif len(names) == 1:
+#         return names[0] + ' likes this'
+#     elif len(names) == 2:
+#         return names[0] + ' and ' + names[1] + ' like this'
+#     elif len(names) == 3:
+#         return names[0] + ', ' + names[1] + ' and ' + names[2] + ' like this'
+#     elif len(names) > 3:
+#         i = len(names) - 2
+#         return names[0] + ', ' + names[1] + ' and ' + str(i) + ' others like this'
+
+
+# print(likes([]))
+# print(likes(['Peter']))
+# print(likes(['Jacob', 'Alex']))
+# print(likes(['Max', 'John', 'Mark']))
+# print(likes(['Alex', 'Jacob', 'Mark', 'Max']))
+
+################
